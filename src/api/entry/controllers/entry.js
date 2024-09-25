@@ -29,7 +29,7 @@ module.exports = createCoreController('api::entry.entry', ({ strapi }) => ({
                 ...data,
                 custom: null,
                 ...data.custom,
-                daysLeft: d.due && await strapi.service('api::entry.entry').daysLeft(data.due)
+                daysLeft: data.due && await strapi.service('api::entry.entry').daysLeft(data.due)
             },
             meta
         }
